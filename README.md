@@ -95,6 +95,11 @@ We create another plot function called plot_num_summary(dataframe) to see the wh
 
 To analyze correlations between numerical columns we create a function called correlated_cols(dataframe):
 
+![correlation](https://github.com/user-attachments/assets/1007480d-1f79-4536-94c8-cae74f3f4403)
+
+# High Correlation Analysis
+
+
 # Missing Value Analysis
 
 We check the data to designate the missing values in it, dataframe.isnull().sum():
@@ -120,10 +125,3 @@ Errors        0
 Salary       59
 NewLeague     0
 dtype: int64
-
-
-![correlation](https://github.com/user-attachments/assets/1007480d-1f79-4536-94c8-cae74f3f4403)
-
-# High Correlation Analysis
-
-
