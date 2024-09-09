@@ -4,7 +4,6 @@
 In this section we are planing to predict the salaries of the baseball players by specific parameters and referred parameters described as:
 
 # Dataset Story
-# Dataset Story
 
 This dataset was originally taken from the StatLib library which is maintained at Carnegie Mellon University. This is part of the data that was used in the 1988 ASA Graphics Section Poster Session. The salary data were originally from Sports Illustrated, April 20, 1987. The 1986 and career statistics were obtained from The 1987 Baseball Encyclopedia Update published by Collier Books, Macmillan Publishing Company, New York.
 
