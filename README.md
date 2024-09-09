@@ -104,24 +104,24 @@ To analyze correlations between numerical columns we create a function called co
 
 We check the data to designate the missing values in it, dataframe.isnull().sum():
 
-AtBat         0
-Hits          0
-HmRun         0
-Runs          0
-RBI           0
-Walks         0
-Years         0
-CAtBat        0
-CHits         0
-CHmRun        0
-CRuns         0
-CRBI          0
-CWalks        0
-League        0
-Division      0
-PutOuts       0
-Assists       0
-Errors        0
-Salary       59
-NewLeague     0
+* AtBat         0
+* Hits          0
+* HmRun         0
+* Runs          0
+* RBI           0
+* Walks         0
+* Years         0
+* CAtBat        0
+* CHits         0
+* CHmRun        0
+* CRuns         0
+* CRBI          0
+* CWalks        0
+* League        0
+* Division      0
+* PutOuts       0
+* Assists       0
+* Errors        0
+* Salary       59
+* NewLeague     0
 dtype: int64
