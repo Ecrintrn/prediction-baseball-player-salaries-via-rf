@@ -99,6 +99,9 @@ To analyze correlations between numerical columns we create a function called co
 
 # High Correlation Analysis
 
+Here, we identify column pairs with high correlation (typically > 0.9), highlighting redundant features that may need review or removal.
+
+![high_correlation](https://github.com/user-attachments/assets/c9f5fa66-053c-4af9-9a3b-6f2cd6c7e3b9)
 
 # Missing Value Analysis
 
@@ -125,3 +128,101 @@ We check the data to designate the missing values in it, dataframe.isnull().sum(
 * Salary       59
 * NewLeague     0
 dtype: int64
+
+For now, we address missing values by filling them with the median of each respective column. 
+
+```
+dataframe.apply(lambda x: x.fillna(x.median()) if x.dtype not in ["category", "object", "bool"] else x, axis=0)
+```
+
+# Encoding
+
+We use encoding techniques to convert categorical variables into numerical format for analysis and modeling.
+
+```
+cat_cols, num_cols, cat_but_car, num_but_cat = grab_col_names(df)
+pd.get_dummies(dataframe, columns=cat_cols, drop_first=drop_first)
+```
+
+# Random Forest
+
+We create our model and see the results:
+
+#################### RF MODEL Results ####################
+
+* MSE Train :  12246.816
+
+* MSE Test :  85516.194
+
+* RMSE Train :  110.665
+
+* RMSE Test :  292.432
+
+* MAE Train :  70.707
+
+* MAE Test :  194.495
+
+* R2 Train :  0.924
+
+* R2 Test :  0.555
+
+* Cross Validate MSE Score:  87996.550
+
+* Cross Validate MSE Score:  291.386
+
+![feauture_importance](https://github.com/user-attachments/assets/a335decc-b639-445e-99ea-ef3d7c475cca)
+
+# Model Tuning
+
+After creating our model, we proceed to fine-tune it and evaluate the results:
+
+#################### RF MODEL Results ####################
+
+* MSE Train :  38376.768
+
+* MSE Test :  44178.763
+
+* RMSE Train :  195.900
+
+* RMSE Test :  210.187
+
+* MAE Train :  140.532
+
+* MAE Test :  145.399
+
+* R2 Train :  0.761
+
+* R2 Test :  0.770
+
+* Cross Validate MSE Score:  84230.838
+
+* Cross Validate MSE Score:  285.428
+
+![model_tuning](https://github.com/user-attachments/assets/bd4b0346-077b-48cd-99f5-106e99815c41)
+
+# Loading a Base Model and Prediction
+
+```
+def load_model(pklfile):
+  model_disc = joblib.load(pklfile)
+  return model_disc
+```
+
+---
+
+Now we can make predictions with our model:
+
+```
+X = df.drop("Salary", axis=1)
+x = X.sample(1).values.tolist()
+model_disc.predict(pd.DataFrame(X))[0]
+```
+result = 331.68
+
+---
+
+```
+sample2 = [250, 78, 15, 40, 100, 30, 8,1800, 500, 80, 220, 290, 140, 700, 90, 8, False, True, True]
+model_disc.predict(pd.DataFrame(sample2).T)[0]
+```
+result = 621.0057300000001
