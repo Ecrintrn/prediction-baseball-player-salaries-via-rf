@@ -91,6 +91,12 @@ We create another plot function called plot_num_summary(dataframe) to see the wh
 
 ![plot_num](https://github.com/user-attachments/assets/9b9bf897-f9de-42d1-82b2-d20f7fc2e2aa)
 
+# Target Analysis
+
+For target analysis, we examined the relationship between the target variable and categorical features to understand how different categories impact the target outcomes.
+
+![target_analysis](https://github.com/user-attachments/assets/97d5bc22-a0c5-4b97-8802-2a597d204489)
+
 # Correlation Analysis
 
 To analyze correlations between numerical columns we create a function called correlated_cols(dataframe):
